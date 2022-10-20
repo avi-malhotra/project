@@ -1,0 +1,67 @@
+NBA = Attribute.o CommonSkills.o PhysicalAttributes.o Player.o PointGuard.o ShootingGuard.o SmallForward.o PowerForward.o ChoosingModule.o UltimateTeam.o NBA.o TeamBattle.o Result.o contest.o printingFixtures.o tournamentMatch.o theTournament.o TeamBuildUp.o
+
+all: Simulation
+
+Simulation: $(NBA)
+	g++ Simulation.cpp $(NBA) -o Simulation.out
+
+Attribute.o: Attribute.h Attribute.cpp
+	g++ -c Attribute.cpp
+
+CommonSkills.o: CommonSkills.h CommonSkills.cpp
+	g++ -c CommonSkills.cpp
+
+PhysicalAttributes.o: PhysicalAttributes.h PhysicalAttributes.cpp
+	g++ -c PhysicalAttributes.cpp
+
+Player.o: Player.h Player.cpp
+	g++ -c Player.cpp
+
+SmallForward.o: SmallForward.h SmallForward.cpp
+	g++ -c SmallForward.cpp
+
+PowerForward.o: PowerForward.h PowerForward.cpp
+	g++ -c PowerForward.cpp
+
+ShootingGuard.o: ShootingGuard.h ShootingGuard.cpp
+	g++ -c ShootingGuard.cpp
+
+
+PointGuard.o: PointGuard.h PointGuard.cpp
+	g++ -c PointGuard.cpp
+
+ChoosingModule.o: ChoosingModule.h ChoosingModule.cpp
+	g++ -c ChoosingModule.cpp
+
+UltimateTeam.o: UltimateTeam.h UltimateTeam.cpp
+	g++ -c UltimateTeam.cpp
+
+NBA.o: NBA.h NBA.cpp
+	g++ -c NBA.cpp
+
+TeamBattle.o: TeamBattle.h TeamBattle.cpp
+	g++ -c TeamBattle.cpp
+
+Result.o: Result.h Result.cpp
+	g++ -c Result.cpp
+
+contest.o: contest.h contest.cpp
+	g++ -c contest.cpp
+
+printingFixtures.o: printingFixtures.h printingFixtures.cpp
+	g++ -c printingFixtures.cpp
+
+tournamentMatch.o: tournamentMatch.h tournamentMatch.cpp
+	g++ -c tournamentMatch.cpp
+
+theTournament.o: theTournament.h theTournament.cpp
+	g++ -c theTournament.cpp
+
+TeamBuildUp.o: TeamBuildUp.h TeamBuildUp.cpp
+	g++ -c TeamBuildUp.cpp
+
+Attribute_Test: $(NBA)
+	g++ test_Attribute.cpp $(NBA) -o test_Attribute.out
+
+clean:
+	rm -f *.out *.o Simulation
